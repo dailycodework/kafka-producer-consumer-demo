@@ -1,18 +1,11 @@
-package com.example.kafka1.config;
+package com.fixdecode.kafka1.config;
 
-import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.ProducerConfig;
-import org.apache.kafka.common.serialization.StringDeserializer;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.kafka.ConcurrentKafkaListenerContainerFactoryConfigurer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.kafka.annotation.KafkaListener;
-import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
-import org.springframework.kafka.config.KafkaListenerContainerFactory;
 import org.springframework.kafka.core.*;
-import org.springframework.kafka.listener.ConcurrentMessageListenerContainer;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -35,6 +28,7 @@ public class KafkaProducerConsumerConfig {
         return new DefaultKafkaConsumerFactory<>(this.config());
     }
 
+    // kafka producer template
     @Bean
     public KafkaTemplate<String, Object> kafkaTemplate(){
         return new KafkaTemplate<>(producerFactory());
@@ -49,3 +43,5 @@ public class KafkaProducerConsumerConfig {
         return config;
     }
 }
+
+// ./bin/kafka-console-consumer.sh --topic users --from-beginning --bootstrap-server localhost:9092

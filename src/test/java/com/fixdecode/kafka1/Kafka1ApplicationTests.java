@@ -1,4 +1,4 @@
-package com.example.kafka1;
+package com.fixdecode.kafka1;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

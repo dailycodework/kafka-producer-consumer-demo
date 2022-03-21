@@ -1,4 +1,4 @@
-package com.example.kafka1.config;
+package com.fixdecode.kafka1.config;
 
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
