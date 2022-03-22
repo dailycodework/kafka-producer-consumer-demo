@@ -24,7 +24,6 @@ public class KafkaListenerConfig {
         factory.setConsumerFactory(consumerFactory);
         return factory;
     }
-
     @KafkaListener(topics = "users", groupId = "groupId")
     public void listener(String data){
         System.out.println("Listener Received "+ data + " :-)");
